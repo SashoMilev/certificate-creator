@@ -1,0 +1,122 @@
+
+
+
+If the folder for the file you want to create does not exist, this creates it. Attempting to create a file in a non-existent folder
+will give an IOException or  Access Denied
+        File myFile =  new File(/tmp/testPDF.pdf);
+        if(!myFile.getParentFile().exists()) {
+            myFile.getParentFile().mkdirs();
+        }
+
+
+ BaseFOnt creation what is encoding: but if you just want to be safe, use Identity-H for horizontal text (and Identity-V).
+ BaseFOnt creation what is embedding: When a font is not embedded, the PDF viewer does not know what the font looks like. Instead of using the actual font,
+ it searches for a font with a similar name on the operating system of the person viewing the document. Use embedded for non-standard fonts
+
+
+
+To modify ALL pages of a pdf:
+          int pages = pdfReader.getNumberOfPages();
+
+            for (int i = 1; i <= pages; i++) {
+
+            }
+
+TO get current location:
+  String dir = System.getProperty("user.dir");
+
+To insert non-aligned/aligned text:
+     pageContentByte.showText("Viola Yincheng Niu");
+     pageContentByte.showTextAligned(PdfContentByte.ALIGN_CENTER, "Grass is green", 50, 70, 0);
+
+
+To write text in PDF:
+            pageContentByte.setFontAndSize(frescoFont, 24);
+            pageContentByte.setTextMatrix(700, 700);
+            pageContentByte.showText("This is smaller text top");
+            pageContentByte.setFontAndSize(frescoFont, 36);
+            pageContentByte.setTextMatrix(700, 100);
+            pageContentByte.showText("This is larger text bottom");
+
+
+
+How to add paragraphs AND give them spacing and alignment:   (doesn't work, different version in pom file?)
+    PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
+    Document doc = new Document(pdfDoc);
+    Paragraph p = new Paragraph().
+            .setSpacingRatio(1)
+            .setTextAlignment(TextAlignment.JUSTIFIED)
+            .setMarginLeft(20)
+            .setMarginRight(20)
+            .add("HelloWorld");
+    doc.add(p);
+
+
+Different ways to create fonts: (first was used)
+            BaseFont frescoFont = BaseFont.createFont(FRESCO_PATH, BaseFont.WINANSI, BaseFont.EMBEDDED);
+            FontProgram fontProgram = FontProgramFactory.createFont(FRESCO_PATH);
+            PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+            PdfFont bold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+            Font fresco = new Font(frescoFont, 12);  //didn't need?
+
+
+
+
+
+Paragraph is a content type that can be written to the Pdf. Other possible content types include Anchor, Chapter, Section, List, PdfPTable etc.
+
+
+
+Useful resources:
+https://examples.javacodegeeks.com/core-java/itext-pdfreader-example/
+https://mkyong.com/java/itext-read-and-write-pdf-in-java/
+https://www.w3schools.blog/itext-edit-add-modify-write-an-existing-pdf-file-in-java
+https://web.archive.org/web/20161118052733/http://developers.itextpdf.com/examples/itext-action-second-edition/chapter-1
+web archive examples
+https://stackoverflow.com/questions/51743430/how-to-use-fonts-in-itext-pdf
+https://www.geeksforgeeks.org/java-program-to-extract-content-from-a-excel-sheet/
+
+
+https://www.tutorialspoint.com/itext/itext_overview.htm
+exhaustive tutorial
+https://kb.itextpdf.com/home/it7kb/ebooks/itext-7-jump-start-tutorial-for-java/chapter-5-manipulating-an-existing-pdf-document
+nice example
+https://kb.itextpdf.com/home/it7kb/ebooks/itext-7-building-blocks/chapter-1-introducing-fonts
+detailed tutorial itext7
+https://kb.itextpdf.com/home/it7kb/examples/itext-7-building-blocks-chapter-1-pdffont-examples#iText7BuildingBlocksChapter1:PdfFontexamples-c01e02_text_paragraph_cardo
+itext7 examples
+https://github.com/rfranchi/itext-basic-example/tree/master/src/main
+random example of itext
+
+https://stackoverflow.com/questions/31439410/logging-results-to-an-excel-file-apache-poi-error-if-i-open-the-file-while-pr
+maybe important delay solution set to read/write
+
+Dependencies:
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.52</version>
+        </dependency>
+
+
+
+MainFrame
+to make an image semi-transparent:
+        BufferedImage tmpImg = new BufferedImage(background.getWidth(this), background.getHeight(this),
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = (Graphics2D) tmpImg.getGraphics();
+        g2d.setComposite(AlphaComposite.SrcOver.derive(0.9f));
+        // set the transparency level in range 0.0f - 1.0f
+        g2d.drawImage(background, 0, 0, null);
+        background = tmpImg;
+
+
+creating a label with override for painting image:
+        JLabel  label= new JLabel() {
+            public void paintComponent(Graphics g) {
+                g.drawImage(icon.getImage(), 0, 0, null);
+                super.paintComponent(g);
+            }
+        };
+        label.setOpaque(false);
+        label.setText("Text1");
