@@ -116,7 +116,8 @@ public class ParticipantsExtractor {
                     }
                 }
 
-                if (ID != 0) {
+                //to stop from reading empty rows
+                if (!firstName.equals("")) {
                     Participant participant = new Participant(ID, firstName, lastName, teacherName, category, medalType);
                     participants.add(participant);
                 }

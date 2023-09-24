@@ -62,6 +62,10 @@ public class Participant {
                         templateName = "CertWithTeach";
                     }
                     return templateName;
+                case "Rachmaninoff":
+                        templateName = "Rachmaninoff";
+
+                    return templateName;
                 case "":
                         templateName = "Clear";
 

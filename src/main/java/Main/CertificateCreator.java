@@ -31,7 +31,7 @@ public class CertificateCreator {
         try {
 
             for (int i = 0; i < listParticipants.size(); i++) {
-
+                System.out.println(i);
                 Participant participant = listParticipants.get(i);
                 BaseFont frescoFont = BaseFont.createFont(FRESCO_PATH, BaseFont.WINANSI, BaseFont.EMBEDDED);
 
@@ -43,7 +43,7 @@ public class CertificateCreator {
 
                 File file = new File(fileName);
                 if (!file.isFile()) {
-                    System.out.println("Couldn't find template for " + participant.getTemplateName());
+                    System.out.println("Couldn't find template for " + i + ". " + participant.getName() + " " + fileName);
                     continue;
                 }
 
