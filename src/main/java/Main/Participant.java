@@ -82,8 +82,9 @@ public class Participant {
                 case "16 to 18 years old from NON music school":
                 case "19 to 25 years old from music institution":
                 case "19 years old or older from NON music institution":
-                case "Duets: 13 years old and under":
-                case "Duets: 14 to 18 years old":
+                case "Duet 13-years-old-and-under":
+                case "Duet 14-to-18-years-old":
+                case "NON-Competative Category  Beginner or Initial grade":
                     templateName = templateName + "OwnChoice";
                     break;
                 case "Diploma":
@@ -112,43 +113,43 @@ public class Participant {
             switch (category.trim()) {
 
                 case "8 years old and under":
-                    officialCategory = "Own Choice Class\n8 y/o and under";
+                    officialCategory = "Own Choice Class\n8 years and under";
                     break;
                 case "9 to 10 years old":
-                    officialCategory = "Own Choice Class\n9-10 y/o";
+                    officialCategory = "Own Choice Class\n9 to 10 y.o.";
                     break;
                 case "11 to 12 years old":
-                    officialCategory = "Own Choice Class\n11-12 y/o";
+                    officialCategory = "Own Choice Class\n11 to 12 y.o.";
                     break;
                 case "13 to 15 years old from music school":
-                    officialCategory = "Own Choice Class\n(music school) 13-15 y/o";
+                    officialCategory = "Own Choice Class\n(music school) - 13 to 15 y.o.";
                     break;
                 case "13 to 15 years old from NON music school":
-                    officialCategory = "Own Choice Class (NON \nmusic school) 13-15 y/o";
+                    officialCategory = "Own Choice Class\n(NON music school) - 13 to 15 y.o.";
                     break;
                 case "16 to 18 years old from music school":
-                    officialCategory = "Own Choice Class\n(music school) 16-18 y/o";
+                    officialCategory = "Own Choice Class\n(music school) - 16 to 18 y.o.";
                     break;
                 case "16 to 18 years old from NON music school":
-                    officialCategory = "Own Choice Class (NON \nmusic school) 16-18 y/o";
+                    officialCategory = "Own Choice Class\n(NON music school) - 16 to 18 y.o.";
                     break;
                 case "19 to 25 years old from music institution":
-                    officialCategory = "Own Choice Class (music\ninstitution) 19-25 y/o";
+                    officialCategory = "Own Choice Class\n(Music institution) - 19 to 25 y.o.";
                     break;
                 case "19 years old or older from NON music institution":
-                    officialCategory = "Own Choice Class\n(NON music institution)\n19 y/o or older";
+                    officialCategory = "Own Choice Class\n(NON music institution) 19 years and older";
                     break;
-                case "Duets: 13 years old and under":
-                    officialCategory = "Piano Duets\n13 y/o and under";
+                case "Duet 13-years-old-and-under":
+                    officialCategory = "Piano Duet\n13 years and under";
                     break;
-                case "Duets: 14 to 18 years old":
-                    officialCategory = "Piano Duets\n14-18 y/o";
+                case "Duet 14-to-18-years-old":
+                    officialCategory = "Piano Duet\n14 to 18 years old";
                     break;
                 case "Diploma":
                     officialCategory = "Diploma";
                     break;
                 case "NON-Competative Category  Beginner or Initial grade":
-                    officialCategory = "NON-Competitive\nCategory";
+                    officialCategory = "Beginner or Initial grade";
                     break;
                 case "GRADE 1":
                 case "GRADE 2":

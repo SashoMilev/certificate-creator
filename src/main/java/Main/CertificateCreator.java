@@ -120,7 +120,7 @@ public class CertificateCreator {
         if (length <= 20) {
             return new String[]{teacherName};
 
-        } else if (length <= 40) {
+        } else if (length <= 60) {
 
             StringBuilder firstPart = new StringBuilder();
             StringBuilder secondPart = new StringBuilder();

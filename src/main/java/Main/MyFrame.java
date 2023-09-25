@@ -10,8 +10,7 @@ import static Main.CertificateCreator.DIR_PATH;
 public class MyFrame extends JFrame {
     public static final String TEXT_FIELD_DEFAULT_STRING = "enter location here";
     public static final String IMG_LOCATION = "/src/main/resources/Backgroundv5.jpg";
-    public static final String TEST_STRING = "C:/Users/Sasho/Downloads/Certificates_list.xlsx";
-    public static final String TEST_STRING2 =  DIR_PATH + "/src/main/resources/data/Certificates_list.xlsx";
+    public static final String TEST_STRING = "C:/Users/Sasho/Downloads/LYPCO_2023_-_Certificate_List.xlsx";
     public static boolean sourceAvailable = false;
     public static String tableLocation = "";
 
